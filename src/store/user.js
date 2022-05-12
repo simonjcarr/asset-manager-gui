@@ -1,16 +1,27 @@
+import netlifyIdentity from 'netlify-identity-widget';
+import store from '.';
+console.log("In the user store")
+netlifyIdentity.on('init', user => {
+  console.log("init", user)
+  store.commit('user/setUser', user);
+})
+netlifyIdentity.on('login', user => {
+  console.log("login", user)
+  store.commit('user/setUser', user);
+})
 export default {
   namespaced: true,
   state: { 
-    keycloak: null 
+    user: null,
   },
   mutations: {
-    setKeycloak(state, keycloak) {
-      state.keycloak = keycloak;
-    },
+    setUser(state, user) {
+      state.user = user;
+    }
   },
   actions: {
-    setKeycloak({ commit }, keycloak) {
-      commit("setKeycloak", keycloak);
-    },
+    setUser({ commit }) {
+      commit('setUser', netlifyIdentity.currentUser());
+    }
   },
 };
