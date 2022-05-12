@@ -7,6 +7,11 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/org",
+    name: "org",
+    component: () => import(/* webpackChunkName: "orgIndex" */ "../views/org/org-index.vue"),
+  }
   // {
   //   path: "/about",
   //   name: "about",

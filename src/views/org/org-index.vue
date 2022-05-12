@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div>
-      <router-link to="/org">Manage Organisations</router-link>
-    </div>
+    <div>Organisations</div>
+    
   </div>
 </template>
 
