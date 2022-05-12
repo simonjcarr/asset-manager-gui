@@ -1,14 +1,15 @@
-import netlifyIdentity from 'netlify-identity-widget';
-import store from '.';
-console.log("In the user store")
+import store from '.'
+
 netlifyIdentity.on('init', user => {
-  console.log("init", user)
   store.commit('user/setUser', user);
 })
 netlifyIdentity.on('login', user => {
-  console.log("login", user)
   store.commit('user/setUser', user);
 })
+netlifyIdentity.on('logout', () => {
+  store.commit('user/setUser', null);
+})
+
 export default {
   namespaced: true,
   state: { 
