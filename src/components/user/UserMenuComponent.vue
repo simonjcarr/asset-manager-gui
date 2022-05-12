@@ -1,5 +1,4 @@
 <template>
-  
   <div v-if="user">
     <div>{{user.email}} | <span @click="logout" class="cursor-pointer hover:text-gray-500">Logout</span></div>
   </div>
