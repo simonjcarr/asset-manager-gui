@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen bg-primaryBackground text-primaryText">
     <div class="h-16 p-5">
       <div class="flex flex-row justify-between">
-        <div class="text-2xl">Asset Manager</div>
+        <div class="text-2xl">SOXPROX Asset Manager</div>
         <div>
           <UserMenuComponent />
         </div>
